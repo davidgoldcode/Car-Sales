@@ -24,10 +24,11 @@ export const specsReducer = (state = initialState, action) => {
                 ...state, 
                 car: {
                     ...state.car,
-                    price: `${state.price + action.payload}`
+                    price: state.car.price + action.payload.price,
                 }
             }
         default: 
+            console.log(action, state);
             return state; 
     }
 }

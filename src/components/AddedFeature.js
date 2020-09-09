@@ -1,20 +1,20 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
-const AddedFeature = props => {
+const AddedFeature = (props) => {
+
+  const buttonHandler = (event) => {
+    event.preventDefault();
+    console.log(event);
+    props.addFeature(props.feature.price);
+  }
+  
   return (
     <li>
       {/* Add an onClick to run a function to remove a feature */}
-      <button className="button" onClick={()=>props.dispatch({type: "UPDATE_TOTAL", payload: props.feature.price})}>X</button>
+      <button className="button" onClick={buttonHandler} >X</button>
       {props.feature.name}
     </li>
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    
-  }
-}
-
-export default connect(null, {})(AddedFeature);
+export default AddedFeature;
