@@ -11,7 +11,7 @@ import {updateTotal} from './actions/actions'
 const App = (props) => {
 
   const addFeature = item => {
-    updateTotal(item);
+    props.updateTotal(item);
   }
 
   console.log(props);
@@ -30,6 +30,7 @@ const App = (props) => {
 };
 
 const mapStatetoProps = (state) => {
+  console.log("THIS IS STATE FROM MapStateToProps =>", state)
   return {
     state
   }

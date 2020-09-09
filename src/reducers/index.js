@@ -1,4 +1,4 @@
-import { UPDATE_TOTAL } from '../actions/actions'
+import { UPDATE_TOTAL, REMOVE_ITEM } from '../actions/actions'
 
 export const initialState = {
     additionalPrice: 0,
@@ -21,14 +21,23 @@ export const specsReducer = (state = initialState, action) => {
     switch (action.type) {
         case UPDATE_TOTAL:
             return {
-                ...state, 
+                ...state,
                 car: {
                     ...state.car,
+                    features: [...state.car.features, `${state.car.features.filter((item) => item === action.payload ? item : null)}`],
                     price: state.car.price + action.payload.price,
                 }
             }
+        case REMOVE_ITEM:
+            return {
+                ...state, 
+                car: {
+                    ...state.car,
+                    price: state.car.price - action.payload.price,
+                }
+            }
         default: 
-            console.log(action, state);
+            console.log(action, state); 
             return state; 
     }
 }

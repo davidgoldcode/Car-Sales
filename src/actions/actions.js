@@ -1,4 +1,5 @@
 export const UPDATE_TOTAL = 'UPDATE_TOTAL';
+export const REMOVE_ITEM = 'REMOVE_ITEM';
 
 export function updateTotal(addOnPrice) {
     console.log("ADDITIONAL PRICE BUTTON=>", addOnPrice);
@@ -6,4 +7,12 @@ export function updateTotal(addOnPrice) {
     type: UPDATE_TOTAL,
     payload: addOnPrice
   }
+}
+
+export function deleteTotal(addOnPrice) {
+  console.log("REMOVE PRICE BUTTON=>", addOnPrice);
+return {
+  type: REMOVE_ITEM,
+  payload: addOnPrice
+}
 }
