@@ -24,9 +24,10 @@ export const specsReducer = (state = initialState, action) => {
                 ...state,
                 car: {
                     ...state.car,
-                    features: [...state.car.features, `${state.car.features.filter((item) => item === action.payload ? item : null)}`],
+                    features: [...state.car.features, action.payload.name],
                     price: state.car.price + action.payload.price,
                 }
+
             }
         case REMOVE_ITEM:
             return {
