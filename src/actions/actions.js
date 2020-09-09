@@ -9,10 +9,10 @@ export function updateTotal(addOnPrice) {
   }
 }
 
-export function deleteTotal(addOnPrice) {
-  console.log("REMOVE PRICE BUTTON=>", addOnPrice);
+export function deleteTotal(item) {
+  console.log("REMOVE PRICE BUTTON=>", item);
 return {
   type: REMOVE_ITEM,
-  payload: addOnPrice
+  payload: item
 }
 }

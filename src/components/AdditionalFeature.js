@@ -1,22 +1,21 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import {updateTotal} from '../actions/actions'
 
 const AdditionalFeature = (props) => {
 
-  // const buttonHandler = (event) => {
-  //   event.preventDefault();
-  //   console.log(props.feature, "PROPS FEAT")
-  //   props.updateTotal(props.feature)
-  // }
+  const buttonHandler = (event) => {
+    event.preventDefault();
+    console.log(props.feature, "PROPS FEAT");
+    props.updateTotal(props.item);
+  }
 
   return (
     <li>
       {/* Add an onClick that will let you add a feature to your car */}
-      <button className="button" onClick={() => props.updateTotal(props.feature)}>Add</button>
-      {props.feature.name} ({props.feature.price})
+      <button className="button" onClick={buttonHandler}>Add</button>
+      {props.name} ({props.price})
     </li>
   );
 };
 
-export default connect(null, { updateTotal })(AdditionalFeature);
+export default AdditionalFeature;
+

@@ -4,7 +4,7 @@ import Header from './components/Header';
 import AddedFeatures from './components/AddedFeatures';
 import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
-import { specsReducer as reducer, initialState } from './reducers';
+import { specsReducer as reducer, initialState } from './reducers/index';
 import { connect } from 'react-redux';
 import {updateTotal} from './actions/actions'
 
