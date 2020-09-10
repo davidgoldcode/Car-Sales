@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import {updateTotal} from '../actions/actions'
 
 const AdditionalFeatures = (props) => {
-  console.log("PROOOOOPS", props);
   return (
     <div className="content">
       <h4>Additional Features</h4>
@@ -22,7 +21,7 @@ const AdditionalFeatures = (props) => {
 };
 
 const mapStatetoProps = (state) => {
-  console.log("THIS IS STATE FROM MapStateToProps =>", state)
+  console.log("THIS IS STATE FROM MapStateToProps on Add'l Features =>", state)
   return {
     additionalFeatures: state.additionalFeatures,
   }

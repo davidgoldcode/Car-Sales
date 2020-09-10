@@ -10,10 +10,6 @@ import {updateTotal} from './actions/actions'
 
 const App = (props) => {
 
-  const addFeature = item => {
-    props.updateTotal(item);
-  }
-
   console.log(props);
   return (
     <div className="boxes">

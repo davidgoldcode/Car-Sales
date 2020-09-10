@@ -1,6 +1,7 @@
 import React from 'react';
+import AddedFeature from './AddedFeature';
 import { connect } from 'react-redux';
-import AddedFeature from './AddedFeature'
+import { deleteTotal } from '../actions/actions'
 
 const AddedFeatures = props => {
   
@@ -10,7 +11,7 @@ const AddedFeatures = props => {
       {props.car.features.length ? (
         <ol type="1">
           {props.car.features.map(item => (
-            <AddedFeature key={item.id} name={item.name} addedFeature={item} addFeature={props.addFeature}/>
+            <AddedFeature key={item.id} name={item.name} item={item} deleteTotal={props.deleteTotal}/>
           ))}
         </ol>
       ) : (
@@ -20,4 +21,11 @@ const AddedFeatures = props => {
   );
 };
 
-export default AddedFeatures;
+const mapStatetoProps = (state) => {
+  console.log("THIS IS STATE FROM MapStateToProps from added feats =>", state)
+  return {
+    additionalFeatures: state.additionalFeatures,
+  }
+}
+
+export default connect(mapStatetoProps, { deleteTotal })(AddedFeatures);
